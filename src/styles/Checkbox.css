@@ -1,0 +1,4 @@
+.checkbox-group { margin-bottom: var(--spacing-md); }
+.checkbox-label { display: flex; align-items: center; cursor: pointer; user-select: none; }
+.checkbox-input { width: 18px; height: 18px; margin-right: var(--spacing-sm); cursor: pointer; accent-color: var(--primary-blue); }
+.checkbox-text { font-size: 14px; color: var(--gray-700); }

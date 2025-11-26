@@ -1,0 +1,4 @@
+@import './Common.css';
+.email-verification { position: relative; }
+.verify-button { margin-top: var(--spacing-sm); }
+.verification-status { color: var(--warning); font-size: 12px; margin-top: var(--spacing-xs); }

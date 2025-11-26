@@ -1,0 +1,23 @@
+@import './Common.css';
+.services-grid { display: grid; gap: var(--spacing-lg); margin-bottom: var(--spacing-lg); }
+.service-category { margin-bottom: var(--spacing-md); }
+.standards-select { margin-bottom: var(--spacing-lg); }
+.multi-select { min-height: 120px; }
+.selected-standards { display: flex; flex-wrap: wrap; gap: var(--spacing-sm); margin-bottom: var(--spacing-lg); }
+.standard-tag { display: inline-flex; align-items: center; gap: var(--spacing-sm); padding: 6px 12px; background-color: var(--primary-blue); color: var(--white); border-radius: 50px; font-size: 12px; }
+.standard-tag button { background: none; border: none; color: var(--white); font-size: 16px; cursor: pointer; margin-left: 4px; }
+.date-fields { margin-bottom: var(--spacing-lg); }
+.date-list-section { margin-bottom: var(--spacing-lg); }
+.date-input-group { display: flex; gap: var(--spacing-md); margin-bottom: var(--spacing-md); }
+.date-input { flex: 1; padding: 10px 12px; border: 1px solid var(--gray-300); border-radius: var(--radius-md); font-size: 14px; }
+.date-tags { display: flex; flex-wrap: wrap; gap: var(--spacing-sm); }
+.date-tag { display: inline-flex; align-items: center; gap: var(--spacing-sm); padding: 6px 12px; background-color: var(--secondary-blue); color: var(--white); border-radius: 50px; font-size: 12px; }
+.date-tag button { background: none; border: none; color: var(--white); font-size: 16px; cursor: pointer; }
+.search-box { position: relative; margin-bottom: var(--spacing-lg); }
+.search-input { width: 100%; padding: 10px 12px 10px 40px; border: 1px solid var(--gray-300); border-radius: var(--radius-md); font-size: 14px; }
+.search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); }
+.service-tabs { display: flex; gap: var(--spacing-sm); margin-bottom: var(--spacing-lg); border-bottom: 1px solid var(--gray-200); }
+.tab-button { padding: var(--spacing-md) var(--spacing-lg); background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--gray-600); transition: all 0.2s ease; }
+.tab-button.active { color: var(--primary-blue); border-bottom-color: var(--primary-blue); }
+.add-other-service-btn { background: none; border: 1px dashed var(--gray-300); padding: var(--spacing-md); border-radius: var(--radius-md); color: var(--primary-blue); font-size: 14px; font-weight: 500; cursor: pointer; width: 100%; text-align: left; margin-bottom: var(--spacing-md); }
+.other-service-input { margin-bottom: var(--spacing-lg); }

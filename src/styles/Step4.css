@@ -1,0 +1,26 @@
+@import './Common.css';
+.location-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-lg); margin-bottom: var(--spacing-lg); }
+.location-card { padding: var(--spacing-xl); border: 2px solid var(--gray-300); border-radius: var(--radius-lg); cursor: pointer; transition: all 0.2s ease; }
+.location-card:hover { border-color: var(--primary-blue); background-color: var(--gray-50); }
+.location-card.selected { border-color: var(--primary-blue); background-color: rgba(44, 82, 130, 0.05); }
+.card-title { font-size: 16px; font-weight: 600; color: var(--gray-800); margin-bottom: var(--spacing-sm); }
+.card-description { font-size: 14px; color: var(--gray-600); }
+.upload-section { margin-top: var(--spacing-xl); }
+.upload-option { padding: var(--spacing-lg); border: 1px solid var(--gray-300); border-radius: var(--radius-lg); cursor: pointer; margin-bottom: var(--spacing-lg); }
+.upload-option.selected { border-color: var(--primary-blue); background-color: rgba(44, 82, 130, 0.05); }
+.option-title { font-size: 16px; font-weight: 600; color: var(--gray-800); margin-bottom: var(--spacing-xs); }
+.option-description { font-size: 14px; color: var(--gray-600); }
+.file-upload-area { padding: var(--spacing-lg); background-color: var(--gray-50); border-radius: var(--radius-lg); }
+.upload-box { border: 2px dashed var(--gray-300); border-radius: var(--radius-lg); padding: var(--spacing-2xl); text-align: center; }
+.upload-icon { margin: 0 auto var(--spacing-md); }
+.upload-title { font-size: 16px; font-weight: 600; color: var(--gray-700); margin-bottom: var(--spacing-sm); }
+.upload-description { font-size: 14px; color: var(--gray-600); margin-bottom: var(--spacing-lg); }
+.file-input { display: none; }
+.file-input-label { display: inline-block; margin-bottom: var(--spacing-md); }
+.download-template { color: var(--primary-blue); font-size: 14px; text-decoration: none; }
+.uploaded-files { margin-top: var(--spacing-lg); }
+.uploaded-file-item { display: flex; justify-content: space-between; align-items: center; padding: var(--spacing-md); background-color: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-md); margin-bottom: var(--spacing-sm); }
+.file-info { display: flex; align-items: center; gap: var(--spacing-sm); }
+.file-size { color: var(--gray-500); font-size: 12px; }
+.remove-file { background: none; border: none; color: var(--error); font-size: 20px; cursor: pointer; }
+@media (max-width: 768px) { .location-cards { grid-template-columns: 1fr; } }

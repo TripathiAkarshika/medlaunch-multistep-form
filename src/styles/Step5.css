@@ -1,0 +1,14 @@
+@import './Common.css';
+.service-tabs { display: flex; gap: var(--spacing-sm); margin-bottom: var(--spacing-lg); border-bottom: 1px solid var(--gray-200); overflow-x: auto; }
+.tab-button { padding: var(--spacing-md) var(--spacing-lg); background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; font-size: 14px; font-weight: 500; color: var(--gray-600); transition: all 0.2s ease; white-space: nowrap; }
+.tab-button.active { color: var(--primary-blue); border-bottom-color: var(--primary-blue); }
+.search-box { position: relative; margin-bottom: var(--spacing-lg); }
+.search-input { width: 100%; padding: 10px 12px 10px 40px; border: 1px solid var(--gray-300); border-radius: var(--radius-md); font-size: 14px; }
+.search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); }
+.services-by-category { margin-bottom: var(--spacing-lg); }
+.service-category { margin-bottom: var(--spacing-xl); }
+.service-category h4 { font-size: 16px; font-weight: 600; color: var(--gray-800); margin-bottom: var(--spacing-md); }
+.service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-sm); }
+.add-other-service-btn { background: none; border: 1px dashed var(--gray-300); padding: var(--spacing-md); border-radius: var(--radius-md); color: var(--primary-blue); font-size: 14px; font-weight: 500; cursor: pointer; width: 100%; text-align: left; }
+.other-service-section { margin-top: var(--spacing-md); }
+@media (max-width: 768px) { .service-grid { grid-template-columns: 1fr; } }

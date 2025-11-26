@@ -1,0 +1,18 @@
+@import './Common.css';
+.review-submit { }
+.review-section { margin-bottom: var(--spacing-xl); padding: var(--spacing-lg); background-color: var(--gray-50); border-radius: var(--radius-lg); }
+.section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-lg); }
+.section-header h3 { font-size: 18px; font-weight: 600; color: var(--gray-800); margin: 0; }
+.edit-btn { background: none; border: none; color: var(--primary-blue); font-size: 14px; font-weight: 500; cursor: pointer; text-decoration: underline; }
+.review-content { }
+.collapsible-section { margin-bottom: var(--spacing-lg); padding: var(--spacing-md); background-color: var(--white); border-radius: var(--radius-md); }
+.collapsible-section h4 { font-size: 16px; font-weight: 600; color: var(--gray-700); margin-bottom: var(--spacing-md); }
+.info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-md); }
+.info-item { display: flex; flex-direction: column; }
+.info-item .label { font-size: 12px; color: var(--gray-500); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+.info-item .value { font-size: 14px; color: var(--gray-800); font-weight: 500; }
+.submit-section { padding: var(--spacing-2xl); background-color: var(--gray-50); border-radius: var(--radius-lg); margin-bottom: var(--spacing-xl); text-align: center; }
+.submit-section h3 { font-size: 20px; font-weight: 600; color: var(--gray-800); margin-bottom: var(--spacing-md); }
+.submit-description { font-size: 14px; color: var(--gray-600); margin-bottom: var(--spacing-xl); }
+.submit-buttons { display: flex; justify-content: center; gap: var(--spacing-md); margin-bottom: var(--spacing-lg); }
+@media (max-width: 768px) { .info-grid { grid-template-columns: 1fr; } .submit-buttons { flex-direction: column; width: 100%; } }
