@@ -12,9 +12,6 @@ const ProgressBar = ({ currentStep, totalSteps = 6 }) => {
 
   return (
     <div className="progress-bar">
-      <div className="step-indicator">
-        Step {currentStep} of {totalSteps}
-      </div>
       <div className="progress-steps">
         {steps.map((step, index) => (
           <div
@@ -23,8 +20,8 @@ const ProgressBar = ({ currentStep, totalSteps = 6 }) => {
               currentStep >= step.number ? 'active' : ''
             } ${currentStep === step.number ? 'current' : ''}`}
           >
-            <div className="step-label">{step.label}</div>
             <div className="step-line"></div>
+            <div className="step-label">{step.label}</div>
           </div>
         ))}
       </div>

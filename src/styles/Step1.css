@@ -1,4 +1,108 @@
 @import './Common.css';
-.email-verification { position: relative; }
-.verify-button { margin-top: var(--spacing-sm); }
-.verification-status { color: var(--warning); font-size: 12px; margin-top: var(--spacing-xs); }
+
+.email-verification {
+  position: relative;
+  margin-bottom: var(--spacing-md);
+  margin-top: -16px;
+}
+
+.email-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0;
+}
+
+.email-label-row .input-label {
+  margin-bottom: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.reload-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-900);
+  transition: color 0.2s ease;
+  margin-top: var(--spacing-lg);
+}
+
+.reload-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.reload-button:hover {
+  color: var(--primary-blue);
+}
+
+.email-verification .input-field {
+  width: 100%;
+  padding: 8px 9px;
+  font-size: 14px;
+  font-family: var(--font-family);
+  color: var(--gray-800);
+  background-color: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+  margin-bottom: var(--spacing-xs);
+}
+
+.email-verification .input-field:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(44, 82, 130, 0.1);
+}
+
+.email-verification .input-field.input-error {
+  border-color: var(--error);
+}
+
+.email-verification .error-message {
+  display: block;
+  margin-top: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
+  font-size: 12px;
+  color: var(--error);
+}
+
+.verification-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.verify-button {
+  flex-shrink: 0;
+  padding: 4px 12px;
+  font-size: 12px;
+  min-height: 12px;
+}
+
+.verification-status {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 16px;
+  display: inline-block;
+}
+
+.verification-status.not-verified {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+
+.verification-status.verified {
+  background-color: #D1FAE5;
+  color: #065F46;
+}

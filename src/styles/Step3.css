@@ -1,1 +1,47 @@
 @import './Common.css';
+
+.contact-section {
+  background-color: var(--white);
+  border: 0.5px solid #5a5a5a;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.contact-section h4 {
+  margin-top: 0;
+}
+
+.contact-section h4:not(:first-of-type) {
+  margin-top: var(--spacing-lg);
+}
+
+.form-section {
+  margin-bottom: 0;
+}
+
+.form-section h3 {
+  margin-bottom: var(--spacing-lg);
+}
+
+.contact-section .input-group {
+  margin-bottom: 0;
+}
+
+.contact-section .input-label {
+  margin-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.contact-section .input-label:first-of-type {
+  margin-top: var(--spacing-sm);
+}
+
+.contact-section .checkbox-group {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.contact-section .form-row {
+  margin-bottom: 0;
+}

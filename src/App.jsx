@@ -6,7 +6,6 @@ import Step3 from './components/Step3';
 import Step4 from './components/Step4';
 import Step5 from './components/Step5';
 import Step6 from './components/Step6';
-import ReviewSubmit from './components/ReviewSubmit';
 import './App.css';
 
 const AppContent = () => {
@@ -26,12 +25,25 @@ const AppContent = () => {
         return <Step5 />;
       case 6:
         return <Step6 />;
-      case 7:
-        return <ReviewSubmit />;
       default:
         return <Step1 />;
     }
   };
+
+  const getPageTitle = () => {
+    const stepTitles = {
+      1: 'New DNV Quote Request',
+      2: 'Facility Details',
+      3: 'Leadership Contacts',
+      4: 'Site Information',
+      5: 'Services & Certifications',
+      6: 'Review & Submit'
+    };
+
+    return stepTitles[currentStep] || 'New DNV Quote Request';
+  };
+
+  const stepContent = renderStep();
 
   return (
     <div className="app">
@@ -47,15 +59,29 @@ const AppContent = () => {
 
       <main className="app-main">
         <div className="container">
-          {currentStep <= 6 && <ProgressBar currentStep={currentStep} totalSteps={6} />}
-          <div className="form-content">{renderStep()}</div>
+          <div className="title-progress-container">
+            <div className="title-step-row">
+              {getPageTitle() && <h2 className="page-title">{getPageTitle()}</h2>}
+              {currentStep <= 6 && <div className="step-indicator-top">Step {currentStep} of 6</div>}
+            </div>
+            {currentStep <= 6 && <ProgressBar currentStep={currentStep} totalSteps={6} />}
+          </div>
+          <div className="form-wrapper">
+            {stepContent}
+          </div>
         </div>
       </main>
 
       <div className="support-chat">
         <button className="support-chat-button">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
-            <path d="M10 0C4.477 0 0 4.477 0 10c0 1.89.525 3.66 1.438 5.168L0 20l4.832-1.438A9.956 9.956 0 0010 20c5.523 0 10-4.477 10-10S15.523 0 10 0z" />
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="800px" viewBox="0 0 512 512" version="1.1">
+            <title>user-settings</title>
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="icon" fill="#ffffffff" transform="translate(64.000000, 42.666667)">
+                <path d="M328.180488,213.333333 L328.181163,236.169297 C338.584391,239.846405 348.098741,245.405183 356.315274,252.43669 L376.112086,241.006655 L405.741716,292.326679 L385.957797,303.749991 C386.931071,309.018468 387.439747,314.44983 387.439747,320 C387.439747,325.550277 386.931052,330.981742 385.957741,336.250315 L405.741716,347.673321 L376.112086,398.993345 L356.315274,387.56331 C348.098741,394.594817 338.584391,400.153595 328.181163,403.830703 L328.180488,426.666667 L268.921228,426.666667 L268.920553,403.830703 C258.51771,400.153731 249.00368,394.595229 240.787356,387.564092 L220.98963,398.993345 L191.36,347.673321 L211.143975,336.250315 C210.170664,330.981742 209.661969,325.550277 209.661969,320 C209.661969,314.449479 210.170709,309.017781 211.144103,303.74899 L191.36,292.326679 L220.98963,241.006655 L240.786362,252.436758 C249.002913,245.405219 258.517291,239.846417 268.920553,236.169297 L268.921228,213.333333 L328.180488,213.333333 Z M186.666667,192 C206.101493,192 224.380148,197.091591 240.310579,206.048663 C225.561078,213.615034 212.475029,223.960979 201.74082,236.39423 C198.115251,235.549019 194.383883,235.003146 190.574699,234.780576 L186.666667,234.666667 L112,234.666667 C75.2924236,234.666667 44.8342773,264.693102 42.7773631,303.0585 L42.6666667,307.2 L42.6666667,341.333333 L172.436614,341.334332 C175.006125,356.649425 180.295262,371.04231 187.790443,383.999404 L1.42108547e-14,384 L1.42108547e-14,307.2 C1.42108547e-14,245.167377 47.6682427,194.586369 107.383368,192.096089 L112,192 L186.666667,192 Z M298.550858,284.444444 C278.914067,284.444444 262.995302,300.363209 262.995302,320 C262.995302,339.636791 278.914067,355.555556 298.550858,355.555556 C318.187649,355.555556 334.106413,339.636791 334.106413,320 C334.106413,300.363209 318.187649,284.444444 298.550858,284.444444 Z M149.333333,7.10542736e-15 C190.570595,7.10542736e-15 224,33.4294053 224,74.6666667 C224,114.529353 192.762078,147.096031 153.430084,149.222851 L149.333333,149.333333 C108.096072,149.333333 74.6666667,115.903928 74.6666667,74.6666667 C74.6666667,34.8039807 105.904589,2.23730242 145.236582,0.110482405 L149.333333,7.10542736e-15 Z M149.333333,42.6666667 C131.660221,42.6666667 117.333333,56.9935547 117.333333,74.6666667 C117.333333,92.3397787 131.660221,106.666667 149.333333,106.666667 C167.006445,106.666667 181.333333,92.3397787 181.333333,74.6666667 C181.333333,56.9935547 167.006445,42.6666667 149.333333,42.6666667 Z" id="Combined-Shape">
+                </path>
+              </g>
+            </g>
           </svg>
           <span>Support Chat</span>
         </button>

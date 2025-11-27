@@ -10,7 +10,8 @@ const Input = ({
   required = false,
   disabled = false,
   error = '',
-  className = ''
+  className = '',
+  autoComplete = 'off'
 }) => {
   return (
     <div className={`input-group ${className}`}>
@@ -28,6 +29,7 @@ const Input = ({
         placeholder={placeholder}
         required={required}
         disabled={disabled}
+        autoComplete={autoComplete}
         className={`input-field ${error ? 'input-error' : ''}`}
       />
       {error && <span className="error-message">{error}</span>}

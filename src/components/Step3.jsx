@@ -149,13 +149,11 @@ const Step3 = () => {
   };
 
   return (
-    <div className="step-container">
-      <div className="step-header">
-        <h2>Leadership Contacts</h2>
-      </div>
-
-      <div className="form-section">
-        <h3>Contact Information</h3>
+    <>
+      <div className="form-content">
+        <div className="step-container">
+          <div className="form-section">
+            <h3>Contact Information</h3>
 
         {/* CEO Section */}
         <div className="contact-section">
@@ -315,10 +313,8 @@ const Step3 = () => {
             disabled={formData.invoicingContact.sameAsPrimary}
             error={errors.invoicingEmail}
           />
-        </div>
 
-        {/* Billing Address Section */}
-        <div className="contact-section">
+          {/* Billing Address Section */}
           <h4>Billing Address</h4>
 
           <Input
@@ -376,14 +372,16 @@ const Step3 = () => {
             />
           </div>
         </div>
+          </div>
+        </div>
       </div>
 
       <div className="form-actions">
-        <Button variant="outline" onClick={previousStep}>
+        <Button variant="outline-blue" onClick={previousStep}>
           Previous
         </Button>
         <div className="right-actions">
-          <Button variant="secondary" onClick={handleSave}>
+          <Button variant="primary" onClick={handleSave}>
             Save
           </Button>
           <Button variant="primary" onClick={handleContinue}>
@@ -391,7 +389,7 @@ const Step3 = () => {
           </Button>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,6 +1,6 @@
 /* Form Container Styles */
 .step-container {
-  min-height: 400px;
+  min-height: 200px;
 }
 
 .step-header {
@@ -18,24 +18,29 @@
   margin-bottom: var(--spacing-2xl);
 }
 
+.form-section:first-child h3:first-of-type {
+  margin-top: 0;
+}
+
 .form-section h3 {
   font-size: 18px;
   font-weight: 600;
   color: var(--gray-800);
-  margin-bottom: var(--spacing-md);
+  margin-top: var(--spacing-2xl);
+  margin-bottom: var(--spacing-sm);
 }
 
 .form-section h4 {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--gray-700);
   margin-bottom: var(--spacing-md);
 }
 
 .section-description {
-  font-size: 14px;
+  font-size: 10px;
   color: var(--gray-600);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
 }
 
 .form-row {
@@ -45,23 +50,23 @@
 }
 
 .form-actions {
+  width: 100%;
+  height: 48px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: var(--spacing-2xl);
-  padding-top: var(--spacing-lg);
-  border-top: 1px solid var(--gray-200);
+  margin-top: 24px;
 }
 
 .right-actions {
   display: flex;
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
 }
 
 .contact-section {
-  padding: var(--spacing-lg);
-  background-color: var(--gray-50);
-  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  background-color: var(--white);
+  border-radius: var(--radius-md);
   margin-bottom: var(--spacing-lg);
 }
 
@@ -69,7 +74,7 @@
 .radio-group {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: 10px;
 }
 
 .radio-option {
@@ -79,26 +84,38 @@
 }
 
 .radio-input {
-  width: 18px;
-  height: 18px;
+  width: 12px;
+  height: 12px;
   margin-right: var(--spacing-sm);
   cursor: pointer;
   accent-color: var(--primary-blue);
 }
 
 .radio-text {
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: 700;
   color: var(--gray-700);
 }
 
 .facility-type-label {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 700;
   color: var(--gray-700);
+  margin-top: var(--spacing-lg);
   margin-bottom: var(--spacing-md);
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  .form-row {
+    gap: var(--spacing-sm);
+  }
+  
+  .step-container {
+    padding: 0 var(--spacing-md);
+  }
+}
+
 @media (max-width: 768px) {
   .form-row {
     flex-direction: column;
@@ -108,6 +125,8 @@
   .form-actions {
     flex-direction: column;
     gap: var(--spacing-md);
+    height: auto;
+    padding: var(--spacing-md) 0;
   }
 
   .right-actions {
@@ -117,5 +136,27 @@
 
   .right-actions .btn {
     width: 100%;
+  }
+  
+  .form-section h3 {
+    font-size: 16px;
+  }
+  
+  .step-header h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-section {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .section-description {
+    font-size: 11px;
+  }
+  
+  .radio-text {
+    font-size: 11px;
   }
 }

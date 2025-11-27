@@ -1,1 +1,5 @@
 @import './Common.css';
+
+.form-section {
+  margin-bottom: 0;
+}

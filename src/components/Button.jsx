@@ -8,12 +8,14 @@ const Button = ({
   disabled = false,
   className = ''
 }) => {
+  const variantClass = variant === 'outline-blue' ? 'btn-outline-blue' : `btn-${variant}`;
+
   return (
     <button
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`btn btn-${variant} ${className}`}
+      className={`btn ${variantClass} ${className}`}
     >
       {children}
     </button>

@@ -8,11 +8,14 @@ const Step2 = () => {
   const [errors, setErrors] = useState({});
 
   const facilityTypes = [
+    { value: 'short-term-acute', label: 'Short-Term Acute Care' },
+    { value: 'long-term-acute', label: 'Long-Term Acute Care' },
+    { value: 'hospital', label: 'Hospital' },
+    { value: 'childrens', label: "Children's" },
+    { value: 'free-standing-psychiatric', label: 'Free-Standing Psychiatric' },
     { value: 'same-as-legal', label: 'Same as Legal Entity Name' },
     { value: 'critical-access', label: 'Critical Access' },
-    { value: 'childrens', label: "Children's" },
     { value: 'ltac', label: 'Long-Term Acute Care (LTAC)' },
-    { value: 'free-standing-psychiatric', label: 'Free-Standing Psychiatric' },
     { value: 'other', label: 'Other' },
   ];
 
@@ -43,45 +46,45 @@ const Step2 = () => {
   };
 
   return (
-    <div className="step-container">
-      <div className="step-header">
-        <h2>Facility Details</h2>
-      </div>
+    <>
+      <div className="form-content">
+        <div className="step-container">
+          <div className="form-section">
+            <h3>Facility and Organization Type</h3>
 
-      <div className="form-section">
-        <h3>Facility and Organization Type</h3>
+            <div className="facility-type-label">
+              Facility Type <span style={{ color: 'var(--error)' }}>*</span>
+            </div>
 
-        <div className="facility-type-label">
-          Facility Type <span className="required">*</span>
+            <div className="radio-group">
+              {facilityTypes.map((type) => (
+                <label key={type.value} className="radio-option">
+                  <input
+                    type="radio"
+                    name="facilityType"
+                    value={type.value}
+                    checked={formData.facilityType === type.value}
+                    onChange={() => handleFacilityTypeSelect(type.value)}
+                    className="radio-input"
+                  />
+                  <span className="radio-text">{type.label}</span>
+                </label>
+              ))}
+            </div>
+
+            {errors.facilityType && (
+              <span className="error-message">{errors.facilityType}</span>
+            )}
+          </div>
         </div>
-
-        <div className="radio-group">
-          {facilityTypes.map((type) => (
-            <label key={type.value} className="radio-option">
-              <input
-                type="radio"
-                name="facilityType"
-                value={type.value}
-                checked={formData.facilityType === type.value}
-                onChange={() => handleFacilityTypeSelect(type.value)}
-                className="radio-input"
-              />
-              <span className="radio-text">{type.label}</span>
-            </label>
-          ))}
-        </div>
-
-        {errors.facilityType && (
-          <span className="error-message">{errors.facilityType}</span>
-        )}
       </div>
 
       <div className="form-actions">
-        <Button variant="outline" onClick={previousStep}>
+        <Button variant="outline-blue" onClick={previousStep}>
           Previous
         </Button>
         <div className="right-actions">
-          <Button variant="secondary" onClick={handleSave}>
+          <Button variant="primary" onClick={handleSave}>
             Save
           </Button>
           <Button variant="primary" onClick={handleContinue}>
@@ -89,7 +92,7 @@ const Step2 = () => {
           </Button>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
